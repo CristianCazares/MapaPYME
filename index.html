@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Mapas Pymes</title>
+
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css ">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <style>
+       html{
+           scroll-behavior:  smooth;
+        }
+        #map{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+        </style>
+  
+  
+</head>
+
+<body>
+    <script src="index.js"></script>
+
+    <section class="bg-light">
+        <div class="container pb-">
+            <div class="row justify-content-center d-flex">
+                <div class="col-xs-12 col-md-10 align-self-center">
+                    <h1 class="display-4 text-center  mb-3 mt-5">Encuentra tus PyME's favoritas</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center">
+                  <form class="form-noborder">
+                    <div class="row mb-5 justify-content-center">
+                      <div class="col-lg-9 col-sm-12 form-group">
+                            <input id="search" class="form-control form-control-lg"
+                            placeholder="Abarrotes, Restaurantes y más..." type="text">
+                      </div>
+      
+                      <div class="col-lg-3 col-sm-12 form-group">
+                        <button type="button" id="searchBtn" class="btn btn-primary btn-block w-100 btn-lg"
+                            onclick = "spawnMarkers()">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <div id="map">
+        <script>
+            createMap();
+        </script>
+    </div>
+
+        
+        
+    <div id="bottom"></div>
+  </body>
+
+</html>
