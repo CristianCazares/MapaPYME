@@ -29,13 +29,26 @@
             width: 100%;
             position: absolute;
         }
+        #toTop {
+          position: absolute;
+          bottom: -25vh;
+          right: 20px;
+          z-index: 400;
+          border-radius: 8px;
+          border: none;
+          background-color: rgb(29, 112, 236);
+          color: white;
+        }
+        #toTop:hover{
+          background-color: rgb(48, 75, 116);
+        }
         </style>
   
   
 </head>
 
 <body>
-    <script src="index.js"></script>
+  <script src="index.js"></script>
 
     <section class="bg-light">
         <div class="container pb-">
@@ -68,7 +81,8 @@
         <script>
             createMap();
         </script>
-    </div>
+      </div>
+      <button id="toTop" onclick="backTop()">Volver</button>
 
         
         
