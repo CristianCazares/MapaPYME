@@ -15,26 +15,39 @@ function spawnMarkers(){
   var search = document.getElementById("search").value.toLowerCase();
 
   if(search != ""){
-    if(search == "restaurantes" || search == "restaurante" || search == "comida"){
+    if(search == "papa" || search == "papas"){
       var locs = [
-        ["CHATA", 20.6746, -103.3465],
-        ["Come Rico", 20.680772, -103.345953],
-        ["Restaurante y Menudería Lidia", 20.681971, -103.34708]
+        ["Mercado Lupe - 20%", 20.6746, -103.3465],
+        ["Las quince letras - Precio mas bajo encontrado", 20.680772, -103.345953],
+        ["Teresita - 30% arriba de 5kg", 20.681971, -103.34708]
       ]
-    }else if(search == "abarrote" || search == "abarrotes" || search == "tienda" || search == "tiendas" || search == "tiendita" || search == "papa"){
+      map.setView([20.679735, -103.348689], 16)
+    }else if(search == "frijol" || search == "frijoles"){
       var locs = [
-        ["Mi Mandado", 20.680777, -103.34982],
-        ["Come Rico", 20.680772, -103.345953],
-        ["Restaurante y Menudería Lidia", 20.681971, -103.34708]
+        ["Tienda de Abarrotes - Precio más bajo encontrado", 20.680777, -103.34982],
+        ["Abarrotes VICKY - Mitad de precio", 20.665519, -103.359413],
+        ["Mercado Alcalde - Mejores reseñas", 20.682368, -103.346672]
       ]
+      map.setView([20.679735, -103.348689], 16)
+    }else if(search == "abarrote" || search == "abarrotes" || search == "tienda" || search == "tiendas" ||
+          search == "tiendita" || search == "mercado" || search == "mercados" || search == "mercadito" ||
+          search == "mercaditos"){
+      var locs = [
+        ["Tienda de Abarrotes", 20.680777, -103.34982],
+        ["Abarrotes VICKY", 20.665519, -103.359413],
+        ["Mercado Alcalde", 20.682368, -103.346672],
+        ["Mercado Lupe", 20.6746, -103.3465],
+        ["Las quince letras", 20.680772, -103.345953],
+        ["Teresita", 20.681971, -103.34708]
+      ]
+      map.setView([20.679735, -103.348689], 14)
     }else{
       alert("No se encontraron resultados para la búsqueda");
       return;
     }
 
 
-    window.scrollTo(0,document.body.scrollHeight);    
-    map.setView([20.679735, -103.348689], 16)
+    window.scrollTo(0,document.body.scrollHeight);
     for(var i = 0; i < locs.length; i++){
       marker = new L.marker([locs[i][1], locs[i][2]]).bindPopup(locs[i][0]).addTo(map);
     }
